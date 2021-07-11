@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Load data from an external GeoJSON file</title>
+    <title>Add a default marker to a web map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
     <style>
@@ -18,10 +19,6 @@
             bottom: 0;
             width: 100%;
         }
-
-        .mapboxgl-ctrl-bottom-right {
-            display: none;
-        }
     </style>
 </head>
 
@@ -29,41 +26,19 @@
     <div id="map"></div>
 
     <script>
-
-        // API Token
         mapboxgl.accessToken = 'pk.eyJ1IjoidGlnZXIzMTI5IiwiYSI6ImNrbmYwZWFzcjEzZ3Yyem83M2RzbjRubTAifQ.vjxDj3LPTG7_KpU3pIp29g';
-
         var map = new mapboxgl.Map({
-            container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            zoom: 7, // starting zoom
-            center: [30.79605102539063, 46.57774276255591] // starting center
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [30.79642586433554, 46.57719435667684],
+            zoom: 12
         });
 
-        map.on('load', function () {
-            map.addSource('earthquakes', {
-                type: 'geojson',
+        // Create a default Marker and add it to the map.
+        var marker1 = new mapboxgl.Marker()
+            .setLngLat([30.79642586433554, 46.57719435667684])
+            .addTo(map);
 
-                data: {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [30.79605102539063, 46.57774276255591]
-                    }
-                }});
-
-            map.addLayer({
-                'id': 'earthquakes-layer',
-                'type': 'circle',
-                'source': 'earthquakes',
-                'paint': {
-                    'circle-radius': 8,
-                    'circle-stroke-width': 2,
-                    'circle-color': 'red',
-                    'circle-stroke-color': 'white'
-                }
-            });
-        });
     </script>
 
 </body>
