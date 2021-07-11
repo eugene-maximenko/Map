@@ -35,8 +35,9 @@
         });
 
         // Create a default Marker and add it to the map.
-        var marker1 = new mapboxgl.Marker()
+        var home = new mapboxgl.Marker()
             .setLngLat([30.79642586433554, 46.57719435667684])
+            .setPopup(new mapboxgl.Popup({ closeButton: false, }).setHTML("<h1>Hello World!</h1>"))
             .addTo(map);
 
     </script>
