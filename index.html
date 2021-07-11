@@ -35,15 +35,15 @@
 
         var map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
             zoom: 7, // starting zoom
-            center: [138.043, 35.201] // starting center
+            center: [30.79605102539063, 46.57774276255591] // starting center
         });
 
         map.on('load', function () {
             map.addSource('earthquakes', {
                 type: 'geojson',
-                // Use a URL for the value for the `data` property.
+
                 data: {
                     "type": "Feature",
                     "geometry": {
