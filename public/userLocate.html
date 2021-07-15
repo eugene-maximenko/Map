@@ -6,53 +6,20 @@
     <title>Locate the user</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
     <div id="map"></div>
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoidGlnZXIzMTI5IiwiYSI6ImNrbmYwZWFzcjEzZ3Yyem83M2RzbjRubTAifQ.vjxDj3LPTG7_KpU3pIp29g';
-        var map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [30.751015, 46.466763], // starting position
-            zoom: 3 // starting zoom
-        });
 
-        var home = new mapboxgl.Marker()
-            .setLngLat([30.79642586433554, 46.57719435667684])
-            .setPopup(new mapboxgl.Popup({ closeButton: false, }).setHTML("<h1>Hello World!</h1>"))
-            .addTo(map);
-
-        var serverPoint = new mapboxgl.Marker()
-            .setLngLat([30.751015, 46.466763])
-            .setPopup(new mapboxgl.Popup({ closeButton: false, }).setHTML("<h1>Hello World!</h1>"))
-            .addTo(map);
-
-        let geolocate = new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            trackUserLocation: true
-        });
-
-        // Add geolocate control to the map.
-        map.addControl(geolocate);
-    </script>
+    <!-- Socket-client script -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Mapbox library -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <!-- Mustache library for HTML templates -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"></script>
+    <!-- JS script -->
+    <script src="/js/userLocate.js"></script>
 
 </body>
 

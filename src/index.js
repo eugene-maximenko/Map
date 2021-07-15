@@ -16,7 +16,7 @@ app.use(express.static(publicDirectoryPath));
 
 // Listen to the client connection
 io.on('connection', (socket) => {
-
+    
 })
 
 // Listen to the server
