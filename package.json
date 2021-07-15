@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tiger3120/Map#readme",
   "dependencies": {
+    "chalk": "^4.1.1",
     "express": "^4.17.1",
     "nodemon": "^2.0.12",
     "socket.io": "^4.1.3"

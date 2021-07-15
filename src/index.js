@@ -2,6 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
+const chalk = require('chalk');
 
 // Configurate the server with socket.io
 const app = express();
@@ -16,7 +17,13 @@ app.use(express.static(publicDirectoryPath));
 
 // Listen to the client connection
 io.on('connection', (socket) => {
-    
+
+    socket.on('joinInitMap', () => {
+        console.log('We have a new connection!')
+
+        socket.emit('consoleMessage', 'You were connected to the socket');
+    })
+
 })
 
 // Listen to the server
