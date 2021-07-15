@@ -19,7 +19,7 @@ app.use(express.static(publicDirectoryPath));
 io.on('connection', (socket) => {
 
     socket.on('joinInitMap', () => {
-        console.log('We have a new connection!')
+        console.log(chalk.bold.white.bgBlue(`We have a new connection: ${socket.id}!`));
 
         socket.emit('consoleMessage', 'You were connected to the socket');
     })
