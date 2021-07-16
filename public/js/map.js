@@ -1545,10 +1545,10 @@ map.on('load', function () {
         'type': 'circle',
         'source': 'national-park',
         'paint': {
-            'circle-radius': 8,
+            'circle-radius': 4,
             'circle-stroke-width': 2,
-            'circle-color': 'red',
-            'circle-stroke-color': 'white'
+            'circle-color': 'blue',
+            'circle-stroke-color': 'orange'
         },
         'filter': ['==', '$type', 'Point']
     })
