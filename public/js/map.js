@@ -21,9 +21,9 @@ let geolocate = new mapboxgl.GeolocateControl({
 // Add geolocate control to the map.
 map.addControl(geolocate);
 
-geolocate.on('geolocate', function () {
-    console.log('A geolocate event has occurred.')
-});
+geolocate.on('trackuserlocationend', function() {
+    console.log('A trackuserlocationend event has occurred.')
+    });
 
 map.on('load', function () {
     map.addSource('national-park', {
