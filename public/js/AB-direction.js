@@ -1,6 +1,6 @@
 // an arbitrary start will always be the same
 // only the end or destination will change
-var start = [30.751015, 46.466763];
+var start = [30.751015, 46.466763]; 
 
 // initialize the map canvas to interact with later
 var canvas = map.getCanvasContainer();
