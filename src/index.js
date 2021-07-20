@@ -18,6 +18,7 @@ app.use(express.static(publicDirectoryPath));
 // Listen to the client connection
 io.on('connection', (socket) => {
 
+    // Client join event
     socket.on('joinInitMap', () => {
         console.log(chalk.bold.white.bgBlue(`We have a new connection: ${socket.id}!`));
 
