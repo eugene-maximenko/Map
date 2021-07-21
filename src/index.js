@@ -25,6 +25,11 @@ io.on('connection', (socket) => {
         socket.emit('consoleMessage', 'You were connected to the socket');
     })
 
+    socket.on('updateGeolocation', ({ longitude, latitude }) => {
+        console.log(longitude, latitude)
+        id = socket.id;
+        socket.broadcast.emit('updatePoint', ({ longitude, latitude, id }))
+    })
 })
 
 // Listen to the server

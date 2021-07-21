@@ -21,10 +21,7 @@ let geolocate = new mapboxgl.GeolocateControl({
 // Add geolocate control to the map.
 map.addControl(geolocate);
 
-geolocate.on('geolocate', function (data) {
-    alert(data.coords.longitude + " " + data.coords.latitude)
-    console.log(data.coords);
-});
+
 
 map.on('load', function () {
     map.addSource('national-park', {
