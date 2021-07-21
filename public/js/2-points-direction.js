@@ -140,7 +140,3 @@ map.on('load', function () {
         getRoute(coords);
     });
 });
-
-geolocate.on('geolocate', function () {
-    alert('A geolocate event has occurred.')
-});

@@ -21,12 +21,8 @@ let geolocate = new mapboxgl.GeolocateControl({
 // Add geolocate control to the map.
 map.addControl(geolocate);
 
-geolocate.on('trackuserlocationend', function () {
-    console.log('A trackuserlocationend event has occurred.')
-});
-
-geolocate.on('geolocate', function () {
-    alert('A geolocate event has occurred.')
+geolocate.on('geolocate', function (data) {
+    console.log(data.coords.longitude, data.coords.latitude)
 });
 
 map.on('load', function () {
