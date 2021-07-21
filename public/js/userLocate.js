@@ -15,11 +15,6 @@ var map = new mapboxgl.Map({
     zoom: 3 // starting zoom
 });
 
-var serverPoint = new mapboxgl.Marker()
-    .setLngLat([30.751015, 46.466763])
-    .setPopup(new mapboxgl.Popup({ closeButton: false, }).setHTML("<h1>serverPoint!</h1>"))
-    .addTo(map);
-
 let geolocate = new mapboxgl.GeolocateControl({
     positionOptions: {
         enableHighAccuracy: true
@@ -29,10 +24,6 @@ let geolocate = new mapboxgl.GeolocateControl({
 
 // Add geolocate control to the map.
 map.addControl(geolocate);
-
-
-
-
 
 geolocate.on('geolocate', function (data) {
     socket.emit('updateGeolocation', {
