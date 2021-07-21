@@ -22,7 +22,8 @@ let geolocate = new mapboxgl.GeolocateControl({
 map.addControl(geolocate);
 
 geolocate.on('geolocate', function (data) {
-    console.log(data.coords.longitude, data.coords.latitude)
+    alert(data.coords.longitude + " " + data.coords.latitude)
+    console.log(data.coords);
 });
 
 map.on('load', function () {
