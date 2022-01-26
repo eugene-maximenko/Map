@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Setting up a static folder
 const publicDirectoryPath = path.join(__dirname, '..');
