@@ -18,18 +18,10 @@ app.use(express.static(publicDirectoryPath));
 // Listen to the client connection
 io.on('connection', (socket) => {
   // Client join event
-  socket.on('joinInitMap', () => {
+  socket.on('joinMapGreeting', () => {
     console.log(
       chalk.bold.white.bgBlue(`We have a new connection: ${socket.id}!`)
     );
-
-    socket.emit('consoleMessage', 'You were connected to the socket');
-  });
-
-  socket.on('updateGeolocation', ({ longitude, latitude }) => {
-    console.log(longitude, latitude);
-    id = socket.id;
-    socket.broadcast.emit('updatePoint', { longitude, latitude, id });
   });
 });
 
